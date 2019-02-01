@@ -1,118 +1,13 @@
-﻿using System.IO;
-using System.Reflection;
-
-namespace Races.Utilities
+﻿namespace Races.Models.Feeds.Caulfield
 {
-   public static class EmbeddedFeeds
-    {
-	    public static string GetFeed(string fileName)
-	    {
-		    var asm = Assembly.GetExecutingAssembly();
-
-		    var resource = $"Races.Utilities.FeedData.{fileName}";
-
-		    using (var stream = asm.GetManifestResourceStream(resource))
-		    {
-			    if (stream == null) return string.Empty;
-
-			    var reader = new StreamReader(stream);
-
-			    return reader.ReadToEnd();
-		    }
-		}
-    }
-
 
 	// NOTE: Generated code may require at least .NET Framework 4.5 or .NET Core/Standard 2.0.
-	/// <remarks/>
-	[System.SerializableAttribute()]
-	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	[System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-	public partial class meeting
-	{
-
-		private string dateField;
-
-		private string meetingTypeField;
-
-		private meetingTrack trackField;
-
-		private uint meetingidField;
-
-		private meetingRaces racesField;
-
-		/// <remarks/>
-		public string date
-		{
-			get
-			{
-				return this.dateField;
-			}
-			set
-			{
-				this.dateField = value;
-			}
-		}
-
-		/// <remarks/>
-		public string MeetingType
-		{
-			get
-			{
-				return this.meetingTypeField;
-			}
-			set
-			{
-				this.meetingTypeField = value;
-			}
-		}
-
-		/// <remarks/>
-		public meetingTrack track
-		{
-			get
-			{
-				return this.trackField;
-			}
-			set
-			{
-				this.trackField = value;
-			}
-		}
-
-		/// <remarks/>
-		public uint Meetingid
-		{
-			get
-			{
-				return this.meetingidField;
-			}
-			set
-			{
-				this.meetingidField = value;
-			}
-		}
-
-		/// <remarks/>
-		public meetingRaces races
-		{
-			get
-			{
-				return this.racesField;
-			}
-			set
-			{
-				this.racesField = value;
-			}
-		}
-	}
 
 	/// <remarks/>
 	[System.SerializableAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	public partial class meetingTrack
+	public  class meetingTrack
 	{
 
 		private string nameField;
@@ -232,7 +127,7 @@ namespace Races.Utilities
 	[System.SerializableAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	public partial class meetingRaces
+	public  class meetingRaces
 	{
 
 		private meetingRacesRace raceField;
@@ -255,7 +150,7 @@ namespace Races.Utilities
 	[System.SerializableAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	public partial class meetingRacesRace
+	public  class meetingRacesRace
 	{
 
 		private byte numberOfRunnersField;
@@ -403,7 +298,7 @@ namespace Races.Utilities
 	[System.SerializableAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	public partial class meetingRacesRaceDistance
+	public  class meetingRacesRaceDistance
 	{
 
 		private ushort metresField;
@@ -427,7 +322,7 @@ namespace Races.Utilities
 	[System.SerializableAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	public partial class meetingRacesRaceHorse
+	public  class meetingRacesRaceHorse
 	{
 
 		private byte numberField;
@@ -759,7 +654,7 @@ namespace Races.Utilities
 	[System.SerializableAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	public partial class meetingRacesRaceHorseTrainer
+	public  class meetingRacesRaceHorseTrainer
 	{
 
 		private meetingRacesRaceHorseTrainerStatistics statisticsField;
@@ -814,7 +709,7 @@ namespace Races.Utilities
 	[System.SerializableAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	public partial class meetingRacesRaceHorseTrainerStatistics
+	public  class meetingRacesRaceHorseTrainerStatistics
 	{
 
 		private meetingRacesRaceHorseTrainerStatisticsStatistic statisticField;
@@ -837,7 +732,7 @@ namespace Races.Utilities
 	[System.SerializableAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	public partial class meetingRacesRaceHorseTrainerStatisticsStatistic
+	public  class meetingRacesRaceHorseTrainerStatisticsStatistic
 	{
 
 		private string typeField;
@@ -925,7 +820,7 @@ namespace Races.Utilities
 	[System.SerializableAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	public partial class meetingRacesRaceHorseJockey
+	public  class meetingRacesRaceHorseJockey
 	{
 
 		private meetingRacesRaceHorseJockeyStatistics statisticsField;
@@ -980,7 +875,7 @@ namespace Races.Utilities
 	[System.SerializableAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	public partial class meetingRacesRaceHorseJockeyStatistics
+	public  class meetingRacesRaceHorseJockeyStatistics
 	{
 
 		private meetingRacesRaceHorseJockeyStatisticsStatistic statisticField;
@@ -1003,7 +898,7 @@ namespace Races.Utilities
 	[System.SerializableAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	public partial class meetingRacesRaceHorseJockeyStatisticsStatistic
+	public  class meetingRacesRaceHorseJockeyStatisticsStatistic
 	{
 
 		private string typeField;
@@ -1091,7 +986,7 @@ namespace Races.Utilities
 	[System.SerializableAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	public partial class meetingRacesRaceHorseWeight
+	public  class meetingRacesRaceHorseWeight
 	{
 
 		private byte allocatedField;
@@ -1131,7 +1026,7 @@ namespace Races.Utilities
 	[System.SerializableAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	public partial class meetingRacesRacePrices
+	public  class meetingRacesRacePrices
 	{
 
 		private meetingRacesRacePricesPrice priceField;
@@ -1154,7 +1049,7 @@ namespace Races.Utilities
 	[System.SerializableAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	public partial class meetingRacesRacePricesPrice
+	public  class meetingRacesRacePricesPrice
 	{
 
 		private string priceTypeField;
@@ -1193,7 +1088,7 @@ namespace Races.Utilities
 	[System.SerializableAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-	public partial class meetingRacesRacePricesPriceHorse
+	public  class meetingRacesRacePricesPriceHorse
 	{
 
 		private byte numberField;
@@ -1228,7 +1123,6 @@ namespace Races.Utilities
 			}
 		}
 	}
-
 
 
 }
