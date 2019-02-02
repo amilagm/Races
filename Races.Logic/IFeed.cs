@@ -4,6 +4,6 @@ namespace Races.Logic
 {
     public interface IFeed
     {
-        RaceTrack GetRaceTrackWithAllRaces();
+        RaceTrack GetRaceTrackWithAllRaces(string feed);
     }
 }
