@@ -14,4 +14,8 @@
     <EmbeddedResource Include="FeedData\Wolferhampton_Race1.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Races.Logic\Races.Logic.csproj" />
+  </ItemGroup>
+
 </Project>
