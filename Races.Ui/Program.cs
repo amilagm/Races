@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Races.Logic;
 using Races.Utilities;
@@ -9,7 +7,7 @@ namespace Races.Ui
 {
     class Program
     {
-         static void Main(string[] args)
+        static void Main(string[] args)
         {
             Console.WriteLine("Race details");
 
@@ -19,9 +17,7 @@ namespace Races.Ui
 
             var processor = serviceProvider.GetService<IFeedProcessor>();
 
-            var tracks = processor.GetAllRacesOrderByPrice();
-
-            foreach (var track in tracks)
+            foreach (var track in processor.GetAllRacesOrderByPrice())
             {
                 Console.WriteLine($"Race track: {track.Name}");
 
@@ -48,12 +44,12 @@ namespace Races.Ui
         {
             var collection = new ServiceCollection();
 
-            collection.AddTransient<IFeedProcessor,FeedProcessor>();
+            collection.AddTransient<IFeedProcessor, FeedProcessor>();
 
             collection.AddTransient(FeedFactory.GetAllFeeds);
 
             return collection.BuildServiceProvider();
-            
+
         }
     }
 }
