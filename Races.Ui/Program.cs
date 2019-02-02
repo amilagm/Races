@@ -9,15 +9,38 @@ namespace Races.Ui
 {
     class Program
     {
-        async static Task Main(string[] args)
+         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Race details");
+
+            Console.WriteLine("========================================================");
 
             var serviceProvider = BuildServiceProvider();
 
             var processor = serviceProvider.GetService<IFeedProcessor>();
 
-            var races = processor.GetAllRacesOrderByPrice();
+            var tracks = processor.GetAllRacesOrderByPrice();
+
+            foreach (var track in tracks)
+            {
+                Console.WriteLine($"Race track: {track.Name}");
+
+                foreach (var race in track.Races)
+                {
+                    Console.WriteLine($"Race: {race.Name}");
+
+                    Console.WriteLine("Horses");
+
+                    foreach (var horse in race.Horses)
+                    {
+                        Console.WriteLine($"\t {horse.Name}");
+                    }
+                }
+            }
+
+            Console.WriteLine("========================================================");
+
+            Console.ReadLine();
         }
 
 

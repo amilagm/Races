@@ -16,9 +16,9 @@ namespace Races.Tests
 		{
 			var feed = EmbeddedFeeds.GetFeed("Wolferhampton_Race1.json");
 
-            var wolfFeed = new WolferhamptonFeed();
+            var wolfFeed = new WolferhamptonFeed(feed);
 
-            var actual = wolfFeed.GetRaceTrackWithAllRaces(feed);
+            var actual = wolfFeed.GetRaceTrackWithAllRaces();
 
 			Assert.Equal("13:45 @ Wolverhampton", actual.Races[0].Name);
 

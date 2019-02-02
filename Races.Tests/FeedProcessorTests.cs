@@ -15,7 +15,7 @@ namespace Races.Tests
         {
             var feedMock1 = new Mock<IFeed>();
 
-            feedMock1.Setup(f => f.GetRaceTrackWithAllRaces("")).Returns(
+            feedMock1.Setup(f => f.GetRaceTrackWithAllRaces()).Returns(
                 new RaceTrack
                 {
                     Name = "Caulfield",
@@ -32,7 +32,7 @@ namespace Races.Tests
 
             var feedMock2 = new Mock<IFeed>();
 
-            feedMock2.Setup(f => f.GetRaceTrackWithAllRaces("")).Returns(
+            feedMock2.Setup(f => f.GetRaceTrackWithAllRaces()).Returns(
                 new RaceTrack
                 {
                     Name = "Wolferhampton",

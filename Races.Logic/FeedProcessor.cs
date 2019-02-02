@@ -19,7 +19,7 @@ namespace Races.Logic
 
             foreach (var feed in feeds)
             {
-                var track = feed.GetRaceTrackWithAllRaces("");
+                var track = feed.GetRaceTrackWithAllRaces();
 
                 foreach (var race in track.Races)
                 {

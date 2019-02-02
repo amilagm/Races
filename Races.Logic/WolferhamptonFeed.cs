@@ -7,7 +7,14 @@ namespace Races.Logic
 {
     public class WolferhamptonFeed : IFeed
     {
-        public RaceTrack GetRaceTrackWithAllRaces(string feed)
+        private readonly string feed;
+
+        public WolferhamptonFeed(string feed)
+        {
+            this.feed = feed;
+        }
+
+        public RaceTrack GetRaceTrackWithAllRaces()
         {
             var race = JsonConvert.DeserializeObject<Models.Feeds.CaulField.Race>(feed);
 

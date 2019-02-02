@@ -10,7 +10,14 @@ namespace Races.Logic
 {
     public class CaulfieldFeed : IFeed
     {
-        public RaceTrack GetRaceTrackWithAllRaces(string feed)
+        private readonly string feed;
+
+        public CaulfieldFeed(string feed)
+        {
+            this.feed = feed;
+        }
+
+        public RaceTrack GetRaceTrackWithAllRaces()
         {
             var serializer = new XmlSerializer(typeof(meeting));
 

@@ -15,9 +15,9 @@ namespace Races.Tests
 		{
 			var feed = EmbeddedFeeds.GetFeed("Caulfield_Race1.xml");
 
-            var caulFeed = new CaulfieldFeed();
+            var caulFeed = new CaulfieldFeed(feed);
 
-            var actual = caulFeed.GetRaceTrackWithAllRaces(feed);
+            var actual = caulFeed.GetRaceTrackWithAllRaces();
 
 			Assert.Equal("Evergreen Turf Plate", actual.Races[0].Name);
 
