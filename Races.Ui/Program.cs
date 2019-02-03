@@ -13,28 +13,37 @@ namespace Races.Ui
 
             Console.WriteLine("========================================================");
 
-            var serviceProvider = BuildServiceProvider();
-
-            var processor = serviceProvider.GetService<IFeedProcessor>();
-
-            foreach (var track in processor.GetAllRacesOrderByPrice())
+            try
             {
-                Console.WriteLine($"Race track: {track.Name}");
+                var serviceProvider = BuildServiceProvider();
 
-                foreach (var race in track.Races)
+                var processor = serviceProvider.GetService<IFeedProcessor>();
+
+                foreach (var track in processor.GetAllRacesOrderByPrice())
                 {
-                    Console.WriteLine($"Race: {race.Name}");
+                    Console.WriteLine($"Race track: {track.Name}");
 
-                    Console.WriteLine("Horses");
-
-                    foreach (var horse in race.Horses)
+                    foreach (var race in track.Races)
                     {
-                        Console.WriteLine($"\t {horse.Name}");
+                        Console.WriteLine($"Race: {race.Name}");
+
+                        Console.WriteLine("Horses");
+
+                        foreach (var horse in race.Horses)
+                        {
+                            Console.WriteLine($"\t {horse.Name}");
+                        }
                     }
                 }
-            }
 
-            Console.WriteLine("========================================================");
+                Console.WriteLine("========================================================");
+
+            }
+            catch (Exception e)
+            {
+                //TODO Log it
+                Console.WriteLine("An error occured. Please press enter to exit");
+            }
 
             Console.ReadLine();
         }
